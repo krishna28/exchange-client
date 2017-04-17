@@ -1,8 +1,8 @@
 {
     "jscodehints.detectedExclusions": [
-        "F:/angularproject/project-management-application/bower_components/jquery/src/traversing/findFilter.js",
-        "F:/angularproject/project-management-application/bower_components/jquery/external/sizzle/dist/sizzle.js",
-        "F:/angularproject/project-management-application/bower_components/jquery/src/var/documentElement.js",
-        "F:/angularproject/project-management-application/app/scripts/controllers/controller.js"
+        "D:/exchange/client/bower_components/jquery/src/traversing/findFilter.js",
+        "D:/exchange/client/bower_components/jquery/external/sizzle/dist/sizzle.js",
+        "D:/exchange/client/bower_components/jquery/src/var/documentElement.js",
+        "D:/exchange/client/app/scripts/controllers/controller.js"
     ]
 }
