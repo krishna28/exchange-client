@@ -12,7 +12,7 @@
 angular.module('exchange', ['appController','mainService','ui-notification'])
    .constant('config',{
          appName: 'Exchange Rates',
-         apiUrl:'http://localhost:3000/api/',
+         apiUrl:'https://exchange1704.herokuapp.com/api/',
          apikey:"ca5f41e1722a406d90028f4ae6e2de15", 
          contentTypeConfig:{
                 headers : {
