@@ -1,5 +1,5 @@
 {
-  "name": "exchange-rate",
+  "name": "exchange",
   "version": "0.0.0",
   "dependencies": {
     "angular": "^1.4.0",
@@ -10,7 +10,7 @@
     "angular-mocks": "^1.4.0"
   },
   "appPath": "app",
-  "moduleName": "exchange-rate",
+  "moduleName": "exchange",
   "overrides": {
     "bootstrap": {
       "main": [

@@ -1,5 +1,5 @@
 {
-  "name": "exchange-rate",
+  "name": "exchange",
   "private": true,
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
