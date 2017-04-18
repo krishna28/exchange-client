@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="bower_components/angular-ui-notification/dist/angular-ui-notification.css" />
-<link rel="stylesheet" type="text/css" href="styles/main.css">
+  <base href="/">
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/angular-ui-notification/dist/angular-ui-notification.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
 </head>
 
 
 <body ng-app="exchange">
 
-<div class="container" ng-controller="MainCtrl  as mainVm">
-<div class="row">
+  <div class="container" ng-controller="MainCtrl  as mainVm">
+    <div class="row">
 
-<div class="col-md-4">
-   <div ng-if="mainVm.loading == true">
-     Please wait Loading ...
-     <div class="loader"></div>
-   </div>
+      <div class="col-md-4">
+       <div ng-if="mainVm.loading == true">
+         Please wait Loading ...
+         <div class="loader"></div>
+       </div>
 
-  <div ng-if="mainVm.updating == true">
-     Please wait updating ...
-  <div class="loader"></div>
-   </div>
-   <div ng-if="mainVm.loading == false">
-   <div class="form-group">
-       <label for="fromExchange">From Exchange</label>
-        <select class="form-control" name="fromExchange" id="fromExchange" ng-model="mainVm.fromCurrency"
-         ng-options="option.currencyName for option in mainVm.exchangeList track by option.code"
-         ng-change="mainVm.changeSelectedItem()">      
-        </select>
-   </div>
-    <div class="form-group">
+       <div ng-if="mainVm.updating == true">
+         Please wait updating ...
+         <div class="loader"></div>
+       </div>
+       <div ng-if="mainVm.loading == false">
+         <div class="form-group">
+           <label for="fromExchange">From Exchange</label>
+           <select class="form-control" name="fromExchange" id="fromExchange" ng-model="mainVm.fromCurrency"
+           ng-options="option.currencyName for option in mainVm.exchangeList track by option.code"
+           ng-change="mainVm.changeSelectedItem()">      
+         </select>
+       </div>
+       <div class="form-group">
         <label for="toExchange">To Exchange</label>
         <select class="form-control" name="toExchange" id="toExchange" ng-model="mainVm.toCurrency"
-         ng-options="option.currencyName for option in mainVm.exchangeList track by option.code"
-         ng-change="mainVm.changeSelectedItem()">      
-        </select>
+        ng-options="option.currencyName for option in mainVm.exchangeList track by option.code"
+        ng-change="mainVm.changeSelectedItem()">      
+      </select>
     </div>
 
     <div class="form-group">
@@ -48,26 +57,26 @@
 
 
 
-     
-     <button class="btn btn-primary" ng-click="mainVm.calculateExchange()">Refresh</button>
+    
+    <button class="btn btn-primary" ng-click="mainVm.calculateExchange()">Refresh</button>
 
-     <hr>
+    <hr>
 
     <div class="checkbox">
-        <label><input type="checkbox" ng-model="mainVm.viewHistory"  name="viewHistory"> View Old Data</label>
+      <label><input type="checkbox" ng-model="mainVm.viewHistory"  name="viewHistory"> View Old Data</label>
     </div>
 
     <div ng-if="mainVm.viewHistory == true">
 
-    <div class="form-group">
-      <input class="form-control"  id="date" type="date" name="currentDate" ng-model="mainVm.currentDate">
-    </div>
+      <div class="form-group">
+        <input class="form-control"  id="date" type="date" name="currentDate" ng-model="mainVm.currentDate">
+      </div>
 
-    <button class="btn btn-primary" ng-click="mainVm.oldExchange()">Old Data</button>
+      <button class="btn btn-primary" ng-click="mainVm.oldExchange()">Old Data</button>
     </div>
     
- 
-   </div>
+    
+  </div>
 
 
 </div>
@@ -78,27 +87,44 @@
     <table class="table table-striped">
      <thead>  
        <tr>  
-          <th class="success">Currency Name</th>  
-          <th class="success">Code</th>
-          <th class="success">Rate</th>  
-       </tr>
-     </thead>
-     <tbody>  
-       <tr ng-repeat="e in mainVm.exchangeList">  
-          <td>{{ e.currencyName }}</td>  
-          <td>{{ e.code }}</td>
-          <td>{{ e.rate }}</td>    
-       </tr>
-     </tbody>  
-    </table>
-   </div>
-  </div>
- </div>
+        <th class="success">Currency Name</th>  
+        <th class="success">Code</th>
+        <th class="success">Rate</th>  
+      </tr>
+    </thead>
+    <tbody>  
+     <tr ng-repeat="e in mainVm.exchangeList">  
+      <td>{{ e.currencyName }}</td>  
+      <td>{{ e.code }}</td>
+      <td>{{ e.rate }}</td>    
+    </tr>
+  </tbody>  
+</table>
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="bower_components/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
-<script type="text/javascript" src="scripts/app.js"></script>
-<script type="text/javascript" src="scripts/controllers/controller.js"></script>
-<script type="text/javascript" src="scripts/services/mainService.js"></script>
+</div>
+</div>
+</div>
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-ui-notification/dist/angular-ui-notification.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js(.tmp) scripts/scripts.js -->
+<!-- script:js -->
+<script  src="scripts/app.js"></script>
+<script  src="scripts/controllers/controller.js"></script>
+<script  src="scripts/services/mainService.js"></script>
+<!-- endscript -->
+<!-- endbuild -->
 </body>
 </html>
